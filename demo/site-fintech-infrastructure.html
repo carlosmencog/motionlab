@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CLEARWIRE - Fintech Infrastructure</title>
+    <link rel="stylesheet" href="../src/motion/motion.css">
+    <link rel="stylesheet" href="./site-fintech-infrastructure.css">
+  </head>
+  <body>
+    <main class="fin-site" data-template="saas-landing">
+      <section
+        class="scene fin-scene fin-scene--appearance"
+        data-template-block="Hero"
+        data-scene="hero-side-by-side"
+        data-enter="fade-up-top"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content fin-copy">
+            <p class="scene__eyebrow" data-animate="eyebrow">CLEARWIRE</p>
+            <h1 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Financial infrastructure that makes money movement observable.
+            </h1>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              Connect payments, ledgers, risk, and reconciliation in one operating map built for fintech teams.
+            </p>
+            <a class="scene__cta" href="#ledger-layer" data-animate="cta" data-motion="text-stagger-up">
+              Explore the system
+            </a>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="wire-map wire-map--overview" aria-label="CLEARWIRE architecture map overview">
+              <header class="wire-map__top">
+                <div class="wire-brand">
+                  <span class="wire-brand__mark"></span>
+                  <span>CLEARWIRE Network</span>
+                </div>
+                <span class="wire-status">Live rails</span>
+              </header>
+
+              <div class="wire-map__body">
+                <nav class="wire-rail" aria-label="Infrastructure layers">
+                  <span class="is-active">Overview</span>
+                  <span>Ledger</span>
+                  <span>Risk</span>
+                  <span>Settlement</span>
+                </nav>
+
+                <div class="wire-main">
+                  <div class="wire-strip">
+                    <span>$42.8M observed</span>
+                    <span>18 payment rails</span>
+                    <span>99.99% trace coverage</span>
+                  </div>
+
+                  <div class="wire-diagram">
+                    <section class="wire-layer wire-layer--primary">
+                      <p class="wire-label">Platform layer</p>
+                      <h2>One map for every money movement.</h2>
+                      <p>Transactions enter with customer, account, risk, ledger, and settlement context attached.</p>
+                    </section>
+
+                    <section class="wire-layer">
+                      <p class="wire-label">Money path</p>
+                      <div class="wire-path">
+                        <span>Checkout</span>
+                        <span>Ledger</span>
+                        <span>Risk</span>
+                        <span>Settle</span>
+                      </div>
+                    </section>
+
+                    <section class="wire-layer">
+                      <p class="wire-label">System edges</p>
+                      <div class="wire-node-row"><strong>Marketplaces</strong><span>Connected</span></div>
+                      <div class="wire-node-row"><strong>Payments</strong><span>Observed</span></div>
+                      <div class="wire-node-row"><strong>Finance Ops</strong><span>Synced</span></div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="ledger-layer"
+        class="scene fin-scene fin-scene--focus"
+        data-template-block="Hero"
+        data-scene="image-fullscreen"
+        data-enter="scale-in"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="wire-map wire-map--ledger" aria-label="CLEARWIRE architecture map ledger focus">
+              <header class="wire-map__top">
+                <div class="wire-brand">
+                  <span class="wire-brand__mark"></span>
+                  <span>CLEARWIRE Network</span>
+                </div>
+                <span class="wire-status">Live rails</span>
+              </header>
+
+              <div class="wire-map__body">
+                <nav class="wire-rail" aria-label="Infrastructure layers">
+                  <span>Overview</span>
+                  <span class="is-active">Ledger</span>
+                  <span>Risk</span>
+                  <span>Settlement</span>
+                </nav>
+
+                <div class="wire-main">
+                  <div class="wire-strip">
+                    <span>Ledger layer central</span>
+                    <span>4,218 entries matched</span>
+                    <span>0 orphan balances</span>
+                  </div>
+
+                  <div class="wire-diagram wire-diagram--ledger">
+                    <section class="wire-layer wire-layer--primary">
+                      <p class="wire-label">Ledger lens</p>
+                      <h2>The ledger becomes the source of truth.</h2>
+                      <p>Every payment event receives a durable accounting position before it reaches finance operations.</p>
+                    </section>
+
+                    <section class="wire-layer">
+                      <p class="wire-label">Balances</p>
+                      <div class="wire-node-row"><strong>Customer funds</strong><span>Protected</span></div>
+                      <div class="wire-node-row"><strong>Platform fees</strong><span>Accrued</span></div>
+                      <div class="wire-node-row"><strong>Payouts</strong><span>Pending</span></div>
+                    </section>
+
+                    <section class="wire-layer">
+                      <p class="wire-label">Controls</p>
+                      <div class="wire-meter"><span style="width: 86%"></span></div>
+                      <p>Ledger checks run before risk release and settlement windows.</p>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="fin-overlay">
+            <p class="scene__eyebrow" data-animate="eyebrow">Focus</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              The ledger layer becomes central.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              CLEARWIRE gives every movement an accounting position before it becomes a payout, exception, or report.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene fin-scene fin-scene--operation"
+        data-template-block="FeatureGrid"
+        data-scene="text-media-scroll"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content fin-copy">
+            <p class="scene__eyebrow" data-animate="eyebrow">Operation</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Follow one transaction through every layer.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              Payment, ledger, risk, and settlement teams see the same event instead of reconciling four versions later.
+            </p>
+
+            <div class="fin-proof-list" data-animate="proof" data-motion="text-stagger-up">
+              <div><strong>Payment event</strong><span>Captured with customer and merchant context</span></div>
+              <div><strong>Risk state</strong><span>Screened before funds move downstream</span></div>
+              <div><strong>Settlement record</strong><span>Matched to ledger and payout batch</span></div>
+            </div>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="wire-map wire-map--flow" aria-label="CLEARWIRE architecture map transaction operation">
+              <header class="wire-map__top">
+                <div class="wire-brand">
+                  <span class="wire-brand__mark"></span>
+                  <span>CLEARWIRE Network</span>
+                </div>
+                <span class="wire-status">Live rails</span>
+              </header>
+
+              <div class="wire-map__body">
+                <nav class="wire-rail" aria-label="Infrastructure layers">
+                  <span>Overview</span>
+                  <span>Ledger</span>
+                  <span class="is-active">Risk</span>
+                  <span>Settlement</span>
+                </nav>
+
+                <div class="wire-main">
+                  <div class="wire-strip">
+                    <span>TX-8842 active</span>
+                    <span>Risk clear</span>
+                    <span>Settlement queued</span>
+                  </div>
+
+                  <div class="wire-diagram wire-diagram--flow">
+                    <section class="wire-layer">
+                      <p class="wire-label">Event</p>
+                      <div class="wire-node-row"><strong>Card payment</strong><span>$1,840.00</span></div>
+                      <div class="wire-node-row"><strong>Merchant</strong><span>Verified</span></div>
+                      <div class="wire-node-row"><strong>Customer</strong><span>Known</span></div>
+                    </section>
+
+                    <section class="wire-layer wire-layer--primary">
+                      <p class="wire-label">Flow lens</p>
+                      <h2>The same transaction stays observable as it moves.</h2>
+                      <p>Operations teams can trace source event, ledger entry, risk decision, and settlement state as one object.</p>
+                    </section>
+
+                    <section class="wire-layer">
+                      <p class="wire-label">Flow state</p>
+                      <div class="wire-path">
+                        <span>Authorize</span>
+                        <span>Book</span>
+                        <span>Screen</span>
+                        <span>Settle</span>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene fin-scene fin-scene--outcome"
+        data-template-block="CTASection"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content fin-outcome">
+            <p class="scene__eyebrow" data-animate="eyebrow">Outcome</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Finance teams get a system they can explain.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              CLEARWIRE turns complex money movement into observable infrastructure for growth, risk, and reconciliation.
+            </p>
+
+            <div class="scene__media fin-outcome__media" data-animate="media" data-motion="image-zoom-out">
+              <article class="wire-map wire-map--outcome" aria-label="CLEARWIRE architecture map outcome">
+                <header class="wire-map__top">
+                  <div class="wire-brand">
+                    <span class="wire-brand__mark"></span>
+                    <span>CLEARWIRE Network</span>
+                  </div>
+                  <span class="wire-status">Live rails</span>
+                </header>
+
+                <div class="wire-map__body">
+                  <nav class="wire-rail" aria-label="Infrastructure layers">
+                    <span>Overview</span>
+                    <span>Ledger</span>
+                    <span>Risk</span>
+                    <span class="is-active">Settlement</span>
+                  </nav>
+
+                  <div class="wire-main">
+                    <div class="wire-strip">
+                      <span>98% auto-reconciled</span>
+                      <span>12 exceptions isolated</span>
+                      <span>Same-day close ready</span>
+                    </div>
+
+                    <div class="wire-diagram wire-diagram--outcome">
+                      <section class="wire-layer wire-layer--primary">
+                        <p class="wire-label">Outcome lens</p>
+                        <h2>Observable money movement becomes operational confidence.</h2>
+                        <p>Teams can explain where funds came from, where they are going, and what controls touched them.</p>
+                      </section>
+
+                      <section class="wire-layer">
+                        <p class="wire-label">Business value</p>
+                        <div class="wire-node-row"><strong>Reconciliation</strong><span>Faster</span></div>
+                        <div class="wire-node-row"><strong>Risk review</strong><span>Clearer</span></div>
+                        <div class="wire-node-row"><strong>Audit trail</strong><span>Complete</span></div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <a class="scene__cta" href="#" data-animate="cta" data-motion="text-stagger-up">
+              Talk to infrastructure
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module">
+      import { initMotionSystem } from "../src/motion/index.js";
+
+      window.motionSystem = initMotionSystem({ debug: true });
+    </script>
+  </body>
+</html>
