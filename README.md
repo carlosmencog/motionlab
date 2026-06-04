@@ -34,6 +34,16 @@ Version 1.0/1.5 is intentionally conservative:
 - Exit animations are disabled.
 - Experimental motion must be opt-in.
 
+## GitHub Pages
+
+Publishing instructions live in [GITHUB_PAGES.md](./GITHUB_PAGES.md).
+
+Official public demo path:
+
+```text
+https://carlosmencog.github.io/motionlab/demo/v3-first-real-site.html
+```
+
 ## Setup
 
 ```html

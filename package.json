@@ -1,0 +1,11 @@
+{
+  "name": "motionlab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "homepage": "https://carlosmencog.github.io/motionlab/",
+  "scripts": {
+    "build": "node scripts/build-pages.js",
+    "check": "node --check scripts/build-pages.js && node --check src/motion/index.js"
+  }
+}
