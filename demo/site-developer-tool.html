@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KEYFORGE - Developer Command Layer</title>
+    <link rel="stylesheet" href="../src/motion/motion.css">
+    <link rel="stylesheet" href="./site-developer-tool.css">
+  </head>
+  <body>
+    <main class="dev-site" data-template="saas-landing">
+      <section
+        class="scene dev-scene dev-scene--appearance"
+        data-template-block="Hero"
+        data-scene="hero-side-by-side"
+        data-enter="fade-up-top"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content dev-copy">
+            <p class="scene__eyebrow" data-animate="eyebrow">KEYFORGE</p>
+            <h1 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              The command layer for developer workflows.
+            </h1>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              Search, trigger, review, and ship engineering work from one fast command surface.
+            </p>
+            <a class="scene__cta" href="#command-focus" data-animate="cta" data-motion="text-stagger-up">
+              Open command layer
+            </a>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="forge-palette forge-palette--home" aria-label="KEYFORGE command palette overview">
+              <header class="forge-palette__top">
+                <div class="forge-brand">
+                  <span class="forge-brand__mark"></span>
+                  <span>KEYFORGE</span>
+                </div>
+                <span class="forge-context">Workspace: Platform</span>
+              </header>
+
+              <div class="forge-search">
+                <span class="forge-prompt">&gt;</span>
+                <span>Search commands, services, pull requests...</span>
+                <kbd>⌘K</kbd>
+              </div>
+
+              <div class="forge-body">
+                <aside class="forge-rail" aria-label="Command areas">
+                  <span class="is-active">Home</span>
+                  <span>Actions</span>
+                  <span>Runs</span>
+                  <span>Insights</span>
+                </aside>
+
+                <div class="forge-main">
+                  <div class="forge-strip">
+                    <span>24 services indexed</span>
+                    <span>8 deploy paths</span>
+                    <span>3 reviews waiting</span>
+                  </div>
+
+                  <div class="forge-grid">
+                    <section class="forge-panel forge-panel--hero">
+                      <p class="forge-label">Appearance</p>
+                      <h2>Everything starts from one command line.</h2>
+                      <p>Developers open KEYFORGE to find systems, trigger workflows, and keep context attached.</p>
+                    </section>
+
+                    <section class="forge-panel">
+                      <p class="forge-label">Recent commands</p>
+                      <div class="forge-row"><strong>Deploy API preview</strong><span>Ready</span></div>
+                      <div class="forge-row"><strong>Open incident runbook</strong><span>Fast</span></div>
+                      <div class="forge-row"><strong>Review database migration</strong><span>Waiting</span></div>
+                    </section>
+
+                    <section class="forge-panel">
+                      <p class="forge-label">Connected surfaces</p>
+                      <div class="forge-tags">
+                        <span>GitHub</span>
+                        <span>CI</span>
+                        <span>Cloud</span>
+                        <span>Docs</span>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="command-focus"
+        class="scene dev-scene dev-scene--focus"
+        data-template-block="Hero"
+        data-scene="image-fullscreen"
+        data-enter="scale-in"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="forge-palette forge-palette--action" aria-label="KEYFORGE command palette action focus">
+              <header class="forge-palette__top">
+                <div class="forge-brand">
+                  <span class="forge-brand__mark"></span>
+                  <span>KEYFORGE</span>
+                </div>
+                <span class="forge-context">Workspace: Platform</span>
+              </header>
+
+              <div class="forge-search forge-search--active">
+                <span class="forge-prompt">&gt;</span>
+                <span>deploy api preview</span>
+                <kbd>Enter</kbd>
+              </div>
+
+              <div class="forge-body">
+                <aside class="forge-rail" aria-label="Command areas">
+                  <span>Home</span>
+                  <span class="is-active">Actions</span>
+                  <span>Runs</span>
+                  <span>Insights</span>
+                </aside>
+
+                <div class="forge-main">
+                  <div class="forge-strip">
+                    <span>Action selected</span>
+                    <span>Service: API</span>
+                    <span>Environment: Preview</span>
+                  </div>
+
+                  <div class="forge-grid">
+                    <section class="forge-panel forge-panel--hero">
+                      <p class="forge-label">Focus</p>
+                      <h2>One command becomes the center of work.</h2>
+                      <p>KEYFORGE turns intent into a scoped action with service, environment, owner, and safety checks visible.</p>
+                    </section>
+
+                    <section class="forge-panel">
+                      <p class="forge-label">Action details</p>
+                      <div class="forge-row"><strong>Service</strong><span>api-gateway</span></div>
+                      <div class="forge-row"><strong>Branch</strong><span>feat/billing</span></div>
+                      <div class="forge-row"><strong>Owner</strong><span>Platform</span></div>
+                    </section>
+
+                    <section class="forge-panel">
+                      <p class="forge-label">Safety</p>
+                      <div class="forge-meter"><span style="width: 82%"></span></div>
+                      <p>Checks confirm test status, reviewer state, and deploy window before execution.</p>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="dev-overlay">
+            <p class="scene__eyebrow" data-animate="eyebrow">Focus</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Intent becomes action.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              The palette moves from search surface to command-specific workspace.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene dev-scene dev-scene--operation"
+        data-template-block="FeatureGrid"
+        data-scene="text-media-scroll"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content dev-copy">
+            <p class="scene__eyebrow" data-animate="eyebrow">Operation</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              One command expands into a full workflow.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              KEYFORGE keeps the execution path visible: checks, reviews, deploy status, rollback plan, and owner.
+            </p>
+
+            <div class="dev-proof-list" data-animate="proof" data-motion="text-stagger-up">
+              <div><strong>Preflight</strong><span>Tests, reviewers, migration risk</span></div>
+              <div><strong>Execution</strong><span>Deploy preview with live status</span></div>
+              <div><strong>Handoff</strong><span>Notify team, attach logs, keep rollback ready</span></div>
+            </div>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="forge-palette forge-palette--run" aria-label="KEYFORGE command palette workflow execution">
+              <header class="forge-palette__top">
+                <div class="forge-brand">
+                  <span class="forge-brand__mark"></span>
+                  <span>KEYFORGE</span>
+                </div>
+                <span class="forge-context">Workspace: Platform</span>
+              </header>
+
+              <div class="forge-search">
+                <span class="forge-prompt">&gt;</span>
+                <span>deploy api preview</span>
+                <kbd>Running</kbd>
+              </div>
+
+              <div class="forge-body">
+                <aside class="forge-rail" aria-label="Command areas">
+                  <span>Home</span>
+                  <span>Actions</span>
+                  <span class="is-active">Runs</span>
+                  <span>Insights</span>
+                </aside>
+
+                <div class="forge-main">
+                  <div class="forge-strip">
+                    <span>Preflight passed</span>
+                    <span>Deploy running</span>
+                    <span>Rollback ready</span>
+                  </div>
+
+                  <div class="forge-grid">
+                    <section class="forge-panel">
+                      <p class="forge-label">Execution state</p>
+                      <div class="forge-row"><strong>Unit tests</strong><span>Passed</span></div>
+                      <div class="forge-row"><strong>Build</strong><span>Running</span></div>
+                      <div class="forge-row is-warn"><strong>Migration check</strong><span>Review</span></div>
+                    </section>
+
+                    <section class="forge-panel forge-panel--hero">
+                      <p class="forge-label">Operation</p>
+                      <h2>The command keeps every system in view.</h2>
+                      <p>The same palette shows CI state, deploy progress, reviewers, logs, and rollback before the workflow completes.</p>
+                    </section>
+
+                    <section class="forge-panel">
+                      <p class="forge-label">Workflow path</p>
+                      <div class="forge-tags">
+                        <span>Check</span>
+                        <span>Build</span>
+                        <span>Deploy</span>
+                        <span>Notify</span>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene dev-scene dev-scene--outcome"
+        data-template-block="CTASection"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content dev-outcome">
+            <p class="scene__eyebrow" data-animate="eyebrow">Outcome</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Engineering work gets faster without losing context.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              The command palette becomes a shared record of what ran, who owned it, and what shipped.
+            </p>
+
+            <div class="scene__media dev-outcome__media" data-animate="media" data-motion="image-zoom-out">
+              <article class="forge-palette forge-palette--outcome" aria-label="KEYFORGE command palette outcome">
+                <header class="forge-palette__top">
+                  <div class="forge-brand">
+                    <span class="forge-brand__mark"></span>
+                    <span>KEYFORGE</span>
+                  </div>
+                  <span class="forge-context">Workspace: Platform</span>
+                </header>
+
+                <div class="forge-search">
+                  <span class="forge-prompt">&gt;</span>
+                  <span>deploy api preview</span>
+                  <kbd>Done</kbd>
+                </div>
+
+                <div class="forge-body">
+                  <aside class="forge-rail" aria-label="Command areas">
+                    <span>Home</span>
+                    <span>Actions</span>
+                    <span>Runs</span>
+                    <span class="is-active">Insights</span>
+                  </aside>
+
+                  <div class="forge-main">
+                    <div class="forge-strip">
+                      <span>Preview deployed</span>
+                      <span>12m saved</span>
+                      <span>Runbook attached</span>
+                    </div>
+
+                    <div class="forge-grid forge-grid--outcome">
+                      <section class="forge-panel forge-panel--hero">
+                        <p class="forge-label">Outcome</p>
+                        <h2>Every command leaves a useful trail.</h2>
+                        <p>Teams get speed, auditability, and fewer context switches without adding another dashboard to watch.</p>
+                      </section>
+
+                      <section class="forge-panel">
+                        <p class="forge-label">Team gains</p>
+                        <div class="forge-row"><strong>Context switching</strong><span>Lower</span></div>
+                        <div class="forge-row"><strong>Deploy confidence</strong><span>Higher</span></div>
+                        <div class="forge-row"><strong>Workflow memory</strong><span>Saved</span></div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <a class="scene__cta" href="#" data-animate="cta" data-motion="text-stagger-up">
+              Join the developer preview
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module">
+      import { initMotionSystem } from "../src/motion/index.js";
+
+      window.motionSystem = initMotionSystem({ debug: true });
+    </script>
+  </body>
+</html>

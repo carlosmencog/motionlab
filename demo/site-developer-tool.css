@@ -1,0 +1,520 @@
+:root {
+  color: #f3f0ff;
+  background: #0c0b12;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+body {
+  background: #0c0b12;
+}
+
+.dev-site {
+  background: #0c0b12;
+}
+
+.dev-scene {
+  color: #f3f0ff;
+  background:
+    radial-gradient(circle at 78% 16%, rgb(164 126 255 / 0.16), transparent 30%),
+    linear-gradient(180deg, #12111b, #0c0b12);
+}
+
+.dev-scene--focus {
+  background:
+    radial-gradient(circle at 52% 18%, rgb(102 230 255 / 0.13), transparent 34%),
+    #0c0b12;
+}
+
+.dev-scene--operation {
+  background:
+    radial-gradient(circle at 14% 18%, rgb(164 126 255 / 0.13), transparent 28%),
+    #10131d;
+}
+
+.dev-scene--outcome {
+  color: #11101a;
+  background:
+    linear-gradient(180deg, rgb(245 244 255 / 0.94), rgb(231 238 248 / 0.96)),
+    #eef2fa;
+}
+
+.dev-scene .scene__inner {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.dev-scene--focus .scene__inner {
+  max-width: none;
+}
+
+.dev-copy .scene__title {
+  max-width: 11ch;
+  font-size: clamp(2.85rem, 5.9vw, 5.8rem);
+}
+
+.dev-copy .scene__text,
+.dev-outcome .scene__text {
+  color: currentColor;
+  opacity: 0.78;
+}
+
+.dev-scene .scene__eyebrow {
+  color: #a98bff;
+}
+
+.dev-scene--outcome .scene__eyebrow {
+  color: #6442c5;
+}
+
+.dev-scene .scene__cta {
+  border-color: rgb(243 240 255 / 0.68);
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.dev-scene .scene__cta:hover {
+  color: #0c0b12;
+  background: #a98bff;
+  border-color: #a98bff;
+}
+
+.dev-scene--outcome .scene__cta {
+  border-color: rgb(17 16 26 / 0.32);
+}
+
+.dev-scene--outcome .scene__cta:hover {
+  color: #f3f0ff;
+  background: #19142e;
+  border-color: #19142e;
+}
+
+.forge-palette {
+  position: relative;
+  width: 100%;
+  min-height: min(72vh, 46rem);
+  padding: clamp(0.9rem, 1.8vw, 1.25rem);
+  overflow: hidden;
+  color: #f2efff;
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.12), rgb(255 255 255 / 0.035)),
+    #161423;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 0.9rem;
+  box-shadow: 0 2rem 5rem rgb(0 0 0 / 0.36);
+}
+
+.forge-palette::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(90deg, rgb(169 139 255 / 0.08), transparent 35%),
+    radial-gradient(circle at 76% 18%, rgb(102 230 255 / 0.16), transparent 24%);
+}
+
+.forge-palette__top,
+.forge-search,
+.forge-body {
+  position: relative;
+  z-index: 1;
+}
+
+.forge-palette__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: clamp(1rem, 2vw, 1.25rem);
+}
+
+.forge-brand,
+.forge-context {
+  display: inline-flex;
+  align-items: center;
+}
+
+.forge-brand {
+  gap: 0.65rem;
+  font-weight: 800;
+}
+
+.forge-brand__mark {
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(135deg, #a98bff, #66e6ff);
+  border-radius: 0.5rem;
+}
+
+.forge-context {
+  min-height: 2rem;
+  padding: 0.42rem 0.7rem;
+  color: #0c0b12;
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: #b9a5ff;
+  border-radius: 999px;
+}
+
+.forge-search {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 0.9rem;
+  color: rgb(243 240 255 / 0.76);
+  background: rgb(0 0 0 / 0.2);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 0.7rem;
+}
+
+.forge-search--active {
+  color: #f3f0ff;
+  border-color: rgb(169 139 255 / 0.42);
+  box-shadow: 0 0 0 0.18rem rgb(169 139 255 / 0.12);
+}
+
+.forge-prompt {
+  color: #66e6ff;
+  font-weight: 900;
+}
+
+.forge-search kbd {
+  padding: 0.35rem 0.5rem;
+  color: #0c0b12;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: #a98bff;
+  border-radius: 0.45rem;
+}
+
+.forge-body {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.forge-rail {
+  display: grid;
+  align-content: start;
+  gap: 0.45rem;
+  min-height: 100%;
+  padding: 0.75rem;
+  background: rgb(0 0 0 / 0.18);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.65rem;
+}
+
+.forge-rail span {
+  padding: 0.55rem 0.65rem;
+  color: rgb(243 240 255 / 0.62);
+  font-size: 0.82rem;
+  border-radius: 0.45rem;
+}
+
+.forge-rail .is-active {
+  color: #0c0b12;
+  font-weight: 800;
+  background: #a98bff;
+}
+
+.forge-main {
+  min-width: 0;
+}
+
+.forge-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  min-width: 0;
+  margin-bottom: 1rem;
+}
+
+.forge-strip span {
+  min-width: 0;
+  min-height: 2.5rem;
+  padding: 0.75rem;
+  color: rgb(243 240 255 / 0.84);
+  font-size: 0.84rem;
+  font-weight: 700;
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.5rem;
+}
+
+.forge-grid {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.forge-grid--outcome {
+  grid-template-columns: 1.18fr 0.82fr;
+}
+
+.forge-panel {
+  min-width: 0;
+  min-height: 12rem;
+  padding: clamp(1rem, 2vw, 1.25rem);
+  background: rgb(255 255 255 / 0.065);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 0.7rem;
+}
+
+.forge-panel--hero {
+  grid-row: span 2;
+  background:
+    linear-gradient(145deg, rgb(169 139 255 / 0.15), rgb(255 255 255 / 0.055)),
+    rgb(255 255 255 / 0.05);
+}
+
+.forge-label,
+.forge-panel h2,
+.forge-panel p {
+  margin: 0;
+}
+
+.forge-label {
+  margin-bottom: 0.75rem;
+  color: #a98bff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.forge-panel h2 {
+  max-width: 17ch;
+  font-size: clamp(1.4rem, 2.8vw, 2.25rem);
+  line-height: 1.02;
+}
+
+.forge-panel p:not(.forge-label) {
+  margin-top: 0.8rem;
+  color: rgb(243 240 255 / 0.72);
+  line-height: 1.5;
+}
+
+.forge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  min-height: 2.8rem;
+  padding: 0.72rem 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+
+.forge-row:last-child {
+  border-bottom: 0;
+}
+
+.forge-row strong,
+.dev-proof-list strong {
+  font-weight: 800;
+}
+
+.forge-row span {
+  color: rgb(243 240 255 / 0.66);
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.forge-row.is-warn span {
+  color: #ffd27c;
+}
+
+.forge-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.forge-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.65rem;
+  color: #0c0b12;
+  font-size: 0.82rem;
+  font-weight: 800;
+  background: #b9a5ff;
+  border-radius: 999px;
+}
+
+.forge-meter {
+  height: 0.7rem;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.1);
+  border-radius: 999px;
+}
+
+.forge-meter span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #a98bff, #66e6ff);
+  border-radius: inherit;
+}
+
+.dev-overlay {
+  position: absolute;
+  z-index: 2;
+  left: clamp(1.25rem, 4vw, 5rem);
+  bottom: clamp(1.25rem, 4vw, 5rem);
+  width: min(100% - 2.5rem, 38rem);
+  padding: clamp(1rem, 2vw, 1.5rem);
+  color: #f3f0ff;
+  background: rgb(12 11 18 / 0.76);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(10px);
+}
+
+.dev-overlay .scene__title {
+  max-width: 9ch;
+  font-size: clamp(2.75rem, 6vw, 5.6rem);
+}
+
+.dev-overlay .scene__text {
+  color: rgb(243 240 255 / 0.78);
+}
+
+.dev-scene--focus .scene__media {
+  position: absolute;
+  inset: clamp(1rem, 2vw, 2rem);
+  width: auto;
+  height: auto;
+}
+
+.dev-scene--focus .forge-palette {
+  min-height: 100%;
+}
+
+.dev-proof-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.dev-proof-list div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem;
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 0.65rem;
+}
+
+.dev-proof-list span {
+  color: rgb(243 240 255 / 0.66);
+}
+
+.dev-outcome {
+  width: min(100%, 74rem);
+}
+
+.dev-outcome .scene__title {
+  max-width: 15ch;
+  font-size: clamp(2.75rem, 5.8vw, 5.5rem);
+}
+
+.dev-outcome__media {
+  width: min(100%, 66rem);
+  margin: clamp(2rem, 4vw, 3rem) auto 0;
+}
+
+.dev-outcome__media .forge-palette {
+  min-height: auto;
+  text-align: left;
+}
+
+@media (max-width: 1000px) {
+  .forge-body,
+  .forge-grid,
+  .forge-grid--outcome {
+    grid-template-columns: 1fr;
+  }
+
+  .forge-panel--hero {
+    grid-row: auto;
+  }
+
+  .forge-rail {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .forge-rail span {
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .dev-copy .scene__title,
+  .dev-overlay .scene__title,
+  .dev-outcome .scene__title {
+    font-size: clamp(2.35rem, 12vw, 4rem);
+  }
+
+  .forge-palette {
+    min-height: auto;
+  }
+
+  .forge-palette__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .forge-search {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .forge-search kbd {
+    display: none;
+  }
+
+  .forge-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .forge-rail {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .dev-scene--focus .scene__media {
+    position: relative;
+    inset: auto;
+    height: auto;
+    min-height: 58vh;
+  }
+
+  .dev-scene--focus .scene__inner {
+    display: grid;
+    align-content: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .dev-scene--focus .forge-palette {
+    min-height: 58vh;
+  }
+
+  .dev-overlay {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    backdrop-filter: none;
+  }
+}
