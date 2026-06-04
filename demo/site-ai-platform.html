@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NOVAOPS AI - Agent Operations Platform</title>
+    <link rel="stylesheet" href="../src/motion/motion.css">
+    <link rel="stylesheet" href="./site-ai-platform.css">
+  </head>
+  <body>
+    <main class="ai-site" data-template="saas-landing">
+      <section
+        class="scene ai-scene ai-scene--appearance"
+        data-template-block="Hero"
+        data-scene="hero-side-by-side"
+        data-enter="fade-up-top"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content ai-copy">
+            <p class="scene__eyebrow" data-animate="eyebrow">NOVAOPS AI</p>
+            <h1 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              The control plane for agentic work.
+            </h1>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              Give every AI agent a visible queue, a human owner, and a governed path from request to approved outcome.
+            </p>
+            <a class="scene__cta" href="#control" data-animate="cta" data-motion="text-stagger-up">
+              Explore the console
+            </a>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="ops-dashboard ops-dashboard--overview" aria-label="NOVAOPS AI dashboard overview">
+              <header class="ops-dashboard__top">
+                <div class="ops-brand">
+                  <span class="ops-brand__mark"></span>
+                  <span>NOVAOPS Console</span>
+                </div>
+                <span class="ops-health">Operational</span>
+              </header>
+
+              <div class="ops-dashboard__body">
+                <nav class="ops-nav" aria-label="Console areas">
+                  <span class="is-active">Overview</span>
+                  <span>Agents</span>
+                  <span>Reviews</span>
+                  <span>Outcomes</span>
+                </nav>
+
+                <div class="ops-main">
+                  <div class="ops-strip">
+                    <span>68 live runs</span>
+                    <span>14 human reviews</span>
+                    <span>99.2% policy coverage</span>
+                  </div>
+
+                  <div class="ops-grid">
+                    <section class="ops-panel ops-panel--hero">
+                      <p class="ops-label">Overview</p>
+                      <h2>All agent work in one supervised operating view.</h2>
+                      <p>Requests arrive with context, ownership, policy checks, and a clear next action.</p>
+                    </section>
+
+                    <section class="ops-panel">
+                      <p class="ops-label">Agent queue</p>
+                      <div class="ops-row"><strong>Claims Agent</strong><span>Running</span></div>
+                      <div class="ops-row"><strong>Research Agent</strong><span>Ready</span></div>
+                      <div class="ops-row"><strong>Support Agent</strong><span>Review</span></div>
+                    </section>
+
+                    <section class="ops-panel">
+                      <p class="ops-label">Path</p>
+                      <div class="ops-path">
+                        <span>Request</span>
+                        <span>Agent</span>
+                        <span>Review</span>
+                        <span>Approve</span>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="control"
+        class="scene ai-scene ai-scene--focus"
+        data-template-block="Hero"
+        data-scene="image-fullscreen"
+        data-enter="scale-in"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="ops-dashboard ops-dashboard--control" aria-label="NOVAOPS AI control dashboard">
+              <header class="ops-dashboard__top">
+                <div class="ops-brand">
+                  <span class="ops-brand__mark"></span>
+                  <span>NOVAOPS Console</span>
+                </div>
+                <span class="ops-health">Operational</span>
+              </header>
+
+              <div class="ops-dashboard__body">
+                <nav class="ops-nav" aria-label="Console areas">
+                  <span>Overview</span>
+                  <span class="is-active">Agents</span>
+                  <span>Reviews</span>
+                  <span>Outcomes</span>
+                </nav>
+
+                <div class="ops-main">
+                  <div class="ops-strip">
+                    <span>Controls active</span>
+                    <span>Policy gates on</span>
+                    <span>Owners synced</span>
+                  </div>
+
+                  <div class="ops-grid">
+                    <section class="ops-panel ops-panel--hero">
+                      <p class="ops-label">Control lens</p>
+                      <h2>Route, limit, and approve what agents can do.</h2>
+                      <p>Operations teams define which work can run autonomously and which decisions require human review.</p>
+                    </section>
+
+                    <section class="ops-panel">
+                      <p class="ops-label">Routing rules</p>
+                      <div class="ops-row"><strong>Low-risk research</strong><span>Auto</span></div>
+                      <div class="ops-row"><strong>Customer refund</strong><span>Review</span></div>
+                      <div class="ops-row"><strong>Legal language</strong><span>Blocked</span></div>
+                    </section>
+
+                    <section class="ops-panel">
+                      <p class="ops-label">Human gates</p>
+                      <div class="ops-meter"><span style="width: 78%"></span></div>
+                      <p>Every sensitive outcome waits for the right owner before delivery.</p>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="ai-overlay">
+            <p class="scene__eyebrow" data-animate="eyebrow">Focus</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Control is the product.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              The dashboard shifts from overview to decision surface: route work, set guardrails, and keep owners visible.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene ai-scene ai-scene--operation"
+        data-template-block="FeatureGrid"
+        data-scene="text-media-scroll"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content ai-copy">
+            <p class="scene__eyebrow" data-animate="eyebrow">Operation</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Every run carries state, risk, and owner.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              NOVAOPS keeps agent work legible while requests move through queues, exceptions, and approvals.
+            </p>
+
+            <div class="ai-proof-list" data-animate="proof" data-motion="text-stagger-up">
+              <div><strong>Agent state</strong><span>Ready, running, waiting, escalated</span></div>
+              <div><strong>Human review</strong><span>Assigned by risk and policy</span></div>
+              <div><strong>Audit trail</strong><span>Attached from request to delivery</span></div>
+            </div>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <article class="ops-dashboard ops-dashboard--operation" aria-label="NOVAOPS AI operational dashboard">
+              <header class="ops-dashboard__top">
+                <div class="ops-brand">
+                  <span class="ops-brand__mark"></span>
+                  <span>NOVAOPS Console</span>
+                </div>
+                <span class="ops-health">Operational</span>
+              </header>
+
+              <div class="ops-dashboard__body">
+                <nav class="ops-nav" aria-label="Console areas">
+                  <span>Overview</span>
+                  <span>Agents</span>
+                  <span class="is-active">Reviews</span>
+                  <span>Outcomes</span>
+                </nav>
+
+                <div class="ops-main">
+                  <div class="ops-strip">
+                    <span>21 running</span>
+                    <span>7 escalated</span>
+                    <span>14 reviews queued</span>
+                  </div>
+
+                  <div class="ops-grid">
+                    <section class="ops-panel">
+                      <p class="ops-label">Live runs</p>
+                      <div class="ops-row"><strong>Invoice Agent</strong><span>Running</span></div>
+                      <div class="ops-row is-alert"><strong>Claims Agent</strong><span>Escalated</span></div>
+                      <div class="ops-row"><strong>Support Agent</strong><span>Waiting</span></div>
+                    </section>
+
+                    <section class="ops-panel ops-panel--hero">
+                      <p class="ops-label">Review queue</p>
+                      <h2>Exceptions surface before they become incidents.</h2>
+                      <p>Owners see the generated answer, risk signal, policy note, and recommended next action together.</p>
+                    </section>
+
+                    <section class="ops-panel">
+                      <p class="ops-label">Handoff</p>
+                      <div class="ops-path">
+                        <span>Detect</span>
+                        <span>Assign</span>
+                        <span>Review</span>
+                        <span>Release</span>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene ai-scene ai-scene--outcome"
+        data-template-block="CTASection"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content ai-outcome">
+            <p class="scene__eyebrow" data-animate="eyebrow">Outcome</p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Agent operations leaders can finally see the system.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              The dashboard turns daily AI activity into a governed operating model with measurable throughput.
+            </p>
+
+            <div class="scene__media ai-outcome__media" data-animate="media" data-motion="image-zoom-out">
+              <article class="ops-dashboard ops-dashboard--outcome" aria-label="NOVAOPS AI outcome dashboard">
+                <header class="ops-dashboard__top">
+                  <div class="ops-brand">
+                    <span class="ops-brand__mark"></span>
+                    <span>NOVAOPS Console</span>
+                  </div>
+                  <span class="ops-health">Operational</span>
+                </header>
+
+                <div class="ops-dashboard__body">
+                  <nav class="ops-nav" aria-label="Console areas">
+                    <span>Overview</span>
+                    <span>Agents</span>
+                    <span>Reviews</span>
+                    <span class="is-active">Outcomes</span>
+                  </nav>
+
+                  <div class="ops-main">
+                    <div class="ops-strip">
+                      <span>384 runs completed</span>
+                      <span>42 hours recovered</span>
+                      <span>0 unowned decisions</span>
+                    </div>
+
+                    <div class="ops-grid ops-grid--outcome">
+                      <section class="ops-panel ops-panel--hero">
+                        <p class="ops-label">Outcome lens</p>
+                        <h2>Visibility becomes operational confidence.</h2>
+                        <p>Every completed run keeps its owner, policy path, approval, and final decision in one record.</p>
+                      </section>
+
+                      <section class="ops-panel">
+                        <p class="ops-label">System gains</p>
+                        <div class="ops-row"><strong>Visibility</strong><span>100%</span></div>
+                        <div class="ops-row"><strong>Review speed</strong><span>2.4x</span></div>
+                        <div class="ops-row"><strong>Decision ownership</strong><span>Clear</span></div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <a class="scene__cta" href="#" data-animate="cta" data-motion="text-stagger-up">
+              Request access
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module">
+      import { initMotionSystem } from "../src/motion/index.js";
+
+      window.motionSystem = initMotionSystem({ debug: true });
+    </script>
+  </body>
+</html>
