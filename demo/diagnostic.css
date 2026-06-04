@@ -1,0 +1,63 @@
+html,
+body {
+  background: #111111;
+}
+
+.diagnostic-scene {
+  color: #f8f6ef;
+}
+
+.diagnostic-scene:nth-of-type(1) {
+  background: #174f3f;
+}
+
+.diagnostic-scene:nth-of-type(2) {
+  background: #5a2f6f;
+}
+
+.diagnostic-scene:nth-of-type(3) {
+  background: #a94f2b;
+}
+
+.diagnostic-scene:nth-of-type(4) {
+  background: #1f4f7a;
+}
+
+.diagnostic-scene .scene__inner {
+  place-items: center;
+  text-align: center;
+}
+
+.diagnostic-scene .scene__content {
+  width: min(100%, 54rem);
+}
+
+.diagnostic-scene__number {
+  display: block;
+  margin: 0;
+  font-size: clamp(5rem, 18vw, 13rem);
+  font-weight: 800;
+  line-height: 0.8;
+  letter-spacing: 0;
+}
+
+.diagnostic-scene .scene__eyebrow {
+  margin-top: 1.5rem;
+  color: currentColor;
+  opacity: 0.72;
+}
+
+.diagnostic-scene .scene__title {
+  max-width: none;
+  margin-top: 1.25rem;
+  font-size: clamp(2rem, 5vw, 4.25rem);
+  line-height: 1;
+}
+
+.diagnostic-scene .scene__text {
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  color: currentColor;
+  opacity: 0.78;
+}

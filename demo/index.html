@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motion System V1 Demo</title>
+    <link rel="stylesheet" href="../src/motion/motion.css">
+    <link rel="stylesheet" href="./demo-theme.css">
+  </head>
+  <body>
+    <main>
+      <section
+        class="scene"
+        data-scene="hero-side-by-side"
+        data-enter="fade-up-top"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">
+              Motion System
+            </p>
+            <h1 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Declarative scenes for expressive scroll.
+            </h1>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              Each section declares its scene, enter, exit, and transition presets through data attributes.
+            </p>
+            <a class="scene__cta" href="#centered" data-animate="cta" data-motion="text-stagger-up">
+              Continue
+            </a>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-zoom-out">
+            <img
+              class="scene__image"
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80"
+              alt="Modern glass house surrounded by trees"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="centered"
+        class="scene"
+        data-scene="hero-centered"
+        data-enter="mask-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">
+              Scene Contract
+            </p>
+            <h2 class="scene__title mask-line" data-animate="title" data-motion="mask-up">
+              Layout and motion stay separate.
+            </h2>
+            <p class="scene__text mask-line" data-animate="text" data-motion="mask-up">
+              The HTML describes intent. Presets define repeatable movement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene"
+        data-scene="image-fullscreen"
+        data-enter="scale-in"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__media" data-animate="media" data-motion="image-parallax-soft">
+            <div class="scene__media-inner">
+              <img
+                class="scene__image"
+                src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1600&q=80"
+                alt="Forest path with soft natural light"
+              >
+            </div>
+          </div>
+          <div class="scene__overlay" data-animate="overlay"></div>
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">
+              Fullscreen Image
+            </p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              Media can be the scene.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              The image uses the same scene contract and the same preset registry.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene"
+        data-scene="text-media-scroll"
+        data-enter="fade-up"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">
+              Text + Media
+            </p>
+            <h2 class="scene__title" data-animate="title" data-motion="text-stagger-up">
+              One markup language, many scenes.
+            </h2>
+            <p class="scene__text" data-animate="text" data-motion="text-stagger-up">
+              Future sections can reuse this same system by changing only data attributes and structural slots.
+            </p>
+            <a class="scene__cta" href="#" data-animate="cta" data-motion="text-stagger-up">
+              Back to top
+            </a>
+          </div>
+
+          <div class="scene__media" data-animate="media" data-motion="image-parallax-soft">
+            <div class="scene__media-inner">
+              <img
+                class="scene__image"
+                src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=80"
+                alt="Architectural geometric facade"
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module">
+      import { initMotionSystem } from "../src/motion/index.js";
+
+      window.motionSystem = initMotionSystem({ debug: true });
+    </script>
+  </body>
+</html>

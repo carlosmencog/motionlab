@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motion System V2 Alpha Cover Safe Content Demo</title>
+    <link rel="stylesheet" href="../src/motion/motion.css">
+    <link rel="stylesheet" href="./v2-cover-safe-content.css">
+  </head>
+  <body>
+    <main>
+      <section
+        class="scene v2-content-scene"
+        data-scene="hero-side-by-side"
+        data-enter="fade-up"
+        data-transition="cover-safe"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">Field Notes</p>
+            <h1 class="scene__title" data-animate="title">
+              Design for places that move slowly.
+            </h1>
+            <p class="scene__text" data-animate="text">
+              A calm editorial sequence for testing cover-safe with real content, imagery, and actions.
+            </p>
+            <a class="scene__cta" href="#" data-animate="cta">
+              View story
+            </a>
+          </div>
+
+          <div class="scene__media" data-animate="media">
+            <img
+              class="scene__image"
+              src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1400&q=80"
+              alt="Quiet interior lounge with warm seating"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene v2-content-scene"
+        data-scene="image-fullscreen"
+        data-enter="scale-in"
+        data-transition="cover-safe"
+      >
+        <div class="scene__inner">
+          <div class="scene__media" data-animate="media">
+            <img
+              class="scene__image"
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80"
+              alt="Modern home surrounded by trees"
+            >
+          </div>
+          <div class="scene__overlay"></div>
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">Material Light</p>
+            <h2 class="scene__title" data-animate="title">
+              Architecture becomes atmosphere.
+            </h2>
+            <p class="scene__text" data-animate="text">
+              Fullscreen imagery tests whether the cover layer keeps continuous viewport coverage.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene v2-content-scene"
+        data-scene="text-media-scroll"
+        data-enter="fade-up"
+        data-transition="cover-safe"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">Process</p>
+            <h2 class="scene__title" data-animate="title">
+              Details carry the narrative.
+            </h2>
+            <p class="scene__text" data-animate="text">
+              This scene combines copy and media without adding parallax or complex child motions.
+            </p>
+          </div>
+
+          <div class="scene__media" data-animate="media">
+            <img
+              class="scene__image"
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80"
+              alt="Workspace with desks and natural light"
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene v2-content-scene"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <p class="scene__eyebrow" data-animate="eyebrow">Alpha Demo</p>
+            <h2 class="scene__title" data-animate="title">
+              The final scene stays in normal flow.
+            </h2>
+            <p class="scene__text" data-animate="text">
+              Cover-safe is only active before this point, so the transition never covers into empty space.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module">
+      import { initMotionSystem } from "../src/motion/index.js";
+
+      window.motionSystem = initMotionSystem({ debug: true });
+    </script>
+  </body>
+</html>

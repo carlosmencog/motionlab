@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Motion System Diagnostic Demo</title>
+    <link rel="stylesheet" href="../src/motion/motion.css">
+    <link rel="stylesheet" href="./diagnostic.css">
+  </head>
+  <body>
+    <main>
+      <section
+        class="scene diagnostic-scene"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <span class="diagnostic-scene__number">01</span>
+            <p class="scene__eyebrow">Pinned scroll</p>
+            <h1 class="scene__title" data-animate="title">Scene one</h1>
+            <p class="scene__text">
+              Fullscreen scene used to test the first pinned section.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene diagnostic-scene"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="pinned-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <span class="diagnostic-scene__number">02</span>
+            <p class="scene__eyebrow">Pinned scroll</p>
+            <h2 class="scene__title" data-animate="title">Scene two</h2>
+            <p class="scene__text">
+              Second pinned section for checking pin spacing and timing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene diagnostic-scene"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <span class="diagnostic-scene__number">03</span>
+            <p class="scene__eyebrow">Normal scroll</p>
+            <h2 class="scene__title" data-animate="title">Scene three</h2>
+            <p class="scene__text">
+              Normal section for comparing non-pinned scene entry.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="scene diagnostic-scene"
+        data-scene="hero-centered"
+        data-enter="fade-up"
+        data-transition="normal-scroll"
+      >
+        <div class="scene__inner">
+          <div class="scene__content">
+            <span class="diagnostic-scene__number">04</span>
+            <p class="scene__eyebrow">Normal scroll</p>
+            <h2 class="scene__title" data-animate="title">Scene four</h2>
+            <p class="scene__text">
+              Final fullscreen scene for checking document flow.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module">
+      import { initMotionSystem } from "../src/motion/index.js";
+
+      window.motionSystem = initMotionSystem({ debug: true });
+    </script>
+  </body>
+</html>
