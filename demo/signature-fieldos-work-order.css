@@ -181,6 +181,105 @@ body {
   font-weight: 900;
 }
 
+.field-operation {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+}
+
+.field-operation__lines {
+  position: absolute;
+  inset: 10vh 5vw 8vh;
+  width: 90vw;
+  height: 82vh;
+  overflow: visible;
+  opacity: 0.58;
+}
+
+.field-operation__lines path {
+  fill: none;
+  stroke: #1f6f49;
+  stroke-linecap: round;
+  stroke-width: 4;
+  filter: drop-shadow(0 0.4rem 1rem rgb(31 111 73 / 0.18));
+}
+
+.operation-node {
+  position: absolute;
+  width: min(14vw, 11rem);
+  min-width: 8.5rem;
+  padding: 0.75rem;
+  color: #172016;
+  background: rgb(248 244 235 / 0.82);
+  border: 1px solid rgb(31 111 73 / 0.16);
+  border-radius: 0.8rem;
+  box-shadow: 0 1.2rem 2.5rem rgb(23 32 22 / 0.12);
+  opacity: 0.28;
+  transform: scale(0.92);
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.operation-node span,
+.operation-node strong {
+  display: block;
+}
+
+.operation-node span {
+  color: rgb(23 32 22 / 0.55);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.operation-node strong {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.operation-node.is-complete {
+  opacity: 0.5;
+}
+
+.operation-node.is-active {
+  color: #f8f4eb;
+  background: #1f6f49;
+  border-color: rgb(248 244 235 / 0.2);
+  box-shadow: 0 1.4rem 3rem rgb(31 111 73 / 0.22);
+  opacity: 0.92;
+  transform: scale(1);
+}
+
+.operation-node.is-active span {
+  color: rgb(248 244 235 / 0.62);
+}
+
+.operation-node--customer {
+  top: 12vh;
+  left: 6vw;
+}
+
+.operation-node--dispatch {
+  top: 20vh;
+  right: 6vw;
+}
+
+.operation-node--technician {
+  top: 44vh;
+  right: 6vw;
+}
+
+.operation-node--repair {
+  top: 68vh;
+  right: 6vw;
+}
+
+.operation-node--completion {
+  left: 6vw;
+  bottom: 8vh;
+}
+
 .field-ticket {
   position: absolute;
   z-index: 4;
@@ -433,6 +532,7 @@ body {
 .reduced-motion .fieldos-brand,
 .reduced-motion .chapter,
 .reduced-motion .field-context,
+.reduced-motion .field-operation,
 .reduced-motion .field-ticket {
   position: static;
   width: 100%;
@@ -448,6 +548,24 @@ body {
   order: -1;
 }
 
+.reduced-motion .field-operation {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.reduced-motion .field-operation__lines {
+  display: none;
+}
+
+.reduced-motion .operation-node {
+  position: static;
+  width: 100%;
+  min-width: 0;
+  opacity: 1;
+  transform: none;
+}
+
 @media (max-width: 900px) {
   .chapter {
     width: min(100% - 2rem, 32rem);
@@ -460,6 +578,30 @@ body {
   .field-context {
     grid-template-columns: 1fr;
     width: min(100% - 2rem, 18rem);
+  }
+
+  .field-operation {
+    opacity: 0.72;
+  }
+
+  .operation-node {
+    width: 8.5rem;
+    padding: 0.65rem;
+  }
+
+  .operation-node--customer {
+    top: 13vh;
+    left: 3vw;
+  }
+
+  .operation-node--dispatch,
+  .operation-node--technician,
+  .operation-node--repair {
+    right: 3vw;
+  }
+
+  .operation-node--completion {
+    left: 3vw;
   }
 }
 
@@ -475,6 +617,7 @@ body {
   .fieldos-brand,
   .chapter,
   .field-context,
+  .field-operation,
   .field-ticket {
     position: static;
     width: 100%;
@@ -489,6 +632,24 @@ body {
 
   .field-context {
     grid-template-columns: 1fr;
+  }
+
+  .field-operation {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .field-operation__lines {
+    display: none;
+  }
+
+  .operation-node {
+    position: static;
+    width: 100%;
+    min-width: 0;
+    opacity: 1;
+    transform: none;
   }
 
   .ticket__identity {

@@ -84,6 +84,36 @@
             </div>
           </aside>
 
+          <div class="field-operation" aria-label="FIELDOS operation graph">
+            <svg class="field-operation__lines" viewBox="0 0 1000 620" aria-hidden="true">
+              <path data-operation-line="request" d="M 120 115 C 350 105 640 110 875 165"></path>
+              <path data-operation-line="dispatch" d="M 875 195 C 900 255 900 310 875 365"></path>
+              <path data-operation-line="technician" d="M 875 395 C 900 450 895 500 865 545"></path>
+              <path data-operation-line="completion" d="M 835 560 C 610 590 355 575 120 535"></path>
+            </svg>
+
+            <div class="operation-node operation-node--customer" data-operation-node="customer">
+              <span>Customer Request</span>
+              <strong>Kitchen leak</strong>
+            </div>
+            <div class="operation-node operation-node--dispatch" data-operation-node="dispatch">
+              <span>Dispatch</span>
+              <strong>Owner + ETA</strong>
+            </div>
+            <div class="operation-node operation-node--technician" data-operation-node="technician">
+              <span>Technician</span>
+              <strong>Mike en route</strong>
+            </div>
+            <div class="operation-node operation-node--repair" data-operation-node="repair">
+              <span>Repair</span>
+              <strong>Proof in field</strong>
+            </div>
+            <div class="operation-node operation-node--completion" data-operation-node="completion">
+              <span>Completion</span>
+              <strong>Invoice sent</strong>
+            </div>
+          </div>
+
           <article class="field-ticket" data-ticket aria-label="Persistent work order WO-2048">
             <header class="ticket__top">
               <div>

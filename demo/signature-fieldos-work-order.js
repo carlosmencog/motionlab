@@ -34,6 +34,8 @@
   const identityEl = document.querySelector(".ticket__identity");
   const timelineItems = Array.from(document.querySelectorAll("[data-phase]"));
   const steps = Array.from(document.querySelectorAll("[data-step]"));
+  const operationNodes = Array.from(document.querySelectorAll("[data-operation-node]"));
+  const operationLines = Array.from(document.querySelectorAll("[data-operation-line]"));
 
   const states = {
     intake: {
@@ -109,6 +111,25 @@
   let activeState = "";
   let timeline = null;
 
+  const operationState = {
+    intake: {
+      active: ["customer"],
+      complete: [],
+    },
+    dispatch: {
+      active: ["dispatch", "technician"],
+      complete: ["customer"],
+    },
+    field: {
+      active: ["technician", "repair"],
+      complete: ["customer", "dispatch"],
+    },
+    completion: {
+      active: ["completion"],
+      complete: ["customer", "dispatch", "technician", "repair"],
+    },
+  };
+
   function fitScale(desiredScale) {
     const availableHeight = Math.max(420, window.innerHeight - 48);
     const ticketHeight = ticket.offsetHeight || 1;
@@ -118,6 +139,41 @@
   function showChapter(name) {
     Object.entries(chapters).forEach(([chapterName, el]) => {
       el?.classList.toggle("is-active", chapterName === name);
+    });
+  }
+
+  function setOperationState(name) {
+    const state = operationState[name];
+
+    if (!state) {
+      return;
+    }
+
+    operationNodes.forEach((node) => {
+      const nodeName = node.dataset.operationNode;
+      const isActive = state.active.includes(nodeName);
+      const isComplete = state.complete.includes(nodeName);
+
+      node.classList.toggle("is-active", isActive);
+      node.classList.toggle("is-complete", isComplete);
+
+      if (window.gsap && !reduceMotion && !isMobile) {
+        window.gsap.to(node, {
+          autoAlpha: isActive ? 0.92 : isComplete ? 0.5 : 0.28,
+          scale: isActive ? 1 : 0.92,
+          duration: 0.18,
+          ease: "power2.out",
+          overwrite: "auto",
+        });
+      }
+    });
+  }
+
+  function prepareOperationLines() {
+    operationLines.forEach((line) => {
+      const length = line.getTotalLength();
+      line.style.strokeDasharray = length;
+      line.style.strokeDashoffset = length;
     });
   }
 
@@ -163,6 +219,7 @@
       .forEach((el) => el.classList.remove("is-emphasized"));
 
     document.querySelector(state.emphasis)?.classList.add("is-emphasized");
+    setOperationState(name);
   }
 
   function stateFromProgress(progress) {
@@ -195,6 +252,7 @@
   gsap.set(Object.values(chapters), { autoAlpha: 0, y: 28 });
   gsap.set(chapters.intake, { autoAlpha: 1, y: 0 });
   gsap.set(ticket, { xPercent: -50, yPercent: -50, x: 220, y: 0, scale: fitScale(0.96), opacity: 1 });
+  prepareOperationLines();
   setTicketState("intake");
 
   timeline = gsap.timeline({
@@ -213,15 +271,19 @@
   });
 
   timeline
+    .to(operationLines[0], { strokeDashoffset: 0, duration: 0.7 }, 0.05)
     .to(ticket, { x: -230, y: -52, scale: () => fitScale(0.9), opacity: 1, duration: 1 })
     .to(chapters.intake, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.dispatch, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
+    .to(operationLines[1], { strokeDashoffset: 0, duration: 0.65 }, "<0.05")
     .to(ticket, { x: 225, y: 12, scale: () => fitScale(0.88), opacity: 1, duration: 1 })
     .to(chapters.dispatch, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.field, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
+    .to(operationLines[2], { strokeDashoffset: 0, duration: 0.65 }, "<0.05")
     .to(ticket, { x: -205, y: 32, scale: () => fitScale(0.9), opacity: 1, duration: 1 })
     .to(chapters.field, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.completion, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
+    .to(operationLines[3], { strokeDashoffset: 0, duration: 0.65 }, "<0.05")
     .to(ticket, { x: 160, y: -36, scale: () => fitScale(0.94), opacity: 1, duration: 1 });
 
   window.addEventListener("load", () => ScrollTrigger.refresh());
