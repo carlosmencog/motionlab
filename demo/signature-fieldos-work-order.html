@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIELDOS - Work Order Journey</title>
+    <link rel="stylesheet" href="./signature-fieldos-work-order.css">
+  </head>
+  <body>
+    <main class="fieldos-page">
+      <section class="fieldos-experience" data-fieldos-experience>
+        <div class="fieldos-stage" data-fieldos-stage>
+          <div class="fieldos-brand">
+            <span class="fieldos-mark"></span>
+            <span>FIELDOS</span>
+          </div>
+
+          <div class="chapter chapter--intake is-active" data-chapter="intake">
+            <p class="chapter__eyebrow">Intake</p>
+            <h1>The operating system for every job in the field.</h1>
+            <p>
+              A customer reports a kitchen leak. FIELDOS turns the call into a
+              structured work order before the team loses context.
+            </p>
+            <div class="chapter__meta">
+              <span>Kitchen leak detected</span>
+              <span>Priority: High</span>
+            </div>
+          </div>
+
+          <div class="chapter chapter--dispatch" data-chapter="dispatch">
+            <p class="chapter__eyebrow">Dispatch</p>
+            <h2>The same job gets an owner.</h2>
+            <p>
+              The ticket keeps its identity while dispatch assigns the right
+              technician, ETA, and route.
+            </p>
+            <div class="chapter__meta">
+              <span>Technician: Mike</span>
+              <span>ETA: 45 min</span>
+            </div>
+          </div>
+
+          <div class="chapter chapter--field" data-chapter="field">
+            <p class="chapter__eyebrow">Field Work</p>
+            <h2>The work order becomes the field record.</h2>
+            <p>
+              Diagnose, parts, repair, and verification stay attached to
+              WO-2048 while the job moves on site.
+            </p>
+            <div class="chapter__meta">
+              <span>Diagnose</span>
+              <span>Parts</span>
+              <span>Repair</span>
+              <span>Verification</span>
+            </div>
+          </div>
+
+          <div class="chapter chapter--completion" data-chapter="completion">
+            <p class="chapter__eyebrow">Completion</p>
+            <h2>One ticket becomes proof, invoice, and memory.</h2>
+            <p>
+              The job closes with customer rating, invoice status, and before
+              and after proof attached.
+            </p>
+            <div class="chapter__meta">
+              <span>5 star rating</span>
+              <span>Invoice sent</span>
+            </div>
+          </div>
+
+          <aside class="field-context" aria-label="Field operation context">
+            <div>
+              <strong>Jobs today</strong>
+              <span>36</span>
+            </div>
+            <div>
+              <strong>Crews active</strong>
+              <span>12</span>
+            </div>
+            <div>
+              <strong>Avg dispatch</strong>
+              <span>18m</span>
+            </div>
+          </aside>
+
+          <article class="field-ticket" data-ticket aria-label="Persistent work order WO-2048">
+            <header class="ticket__top">
+              <div>
+                <p>Work Order</p>
+                <h2>WO-2048</h2>
+              </div>
+              <span class="ticket__priority">High</span>
+            </header>
+
+            <div class="ticket__identity">
+              <div>
+                <span>Service</span>
+                <strong>Plumbing</strong>
+              </div>
+              <div>
+                <span>Customer</span>
+                <strong>Sarah M.</strong>
+              </div>
+              <div>
+                <span>Issue</span>
+                <strong>Kitchen leak detected</strong>
+              </div>
+            </div>
+
+            <div class="ticket__state">
+              <span>Status</span>
+              <strong data-ticket-status>New</strong>
+              <p data-ticket-detail>Intake created from the customer report.</p>
+            </div>
+
+            <div class="ticket__assignment" data-ticket-assignment>
+              <div>
+                <span>Technician</span>
+                <strong data-ticket-tech>Unassigned</strong>
+              </div>
+              <div>
+                <span>ETA</span>
+                <strong data-ticket-eta>Pending</strong>
+              </div>
+            </div>
+
+            <ol class="ticket__steps" aria-label="Field work steps">
+              <li data-step="diagnose">Diagnose</li>
+              <li data-step="parts">Parts</li>
+              <li data-step="repair">Repair</li>
+              <li data-step="verification">Verification</li>
+            </ol>
+
+            <div class="ticket__completion" data-ticket-completion>
+              <span data-ticket-rating>Rating pending</span>
+              <span data-ticket-invoice>Invoice pending</span>
+              <span data-ticket-proof>Proof pending</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./signature-fieldos-work-order.js"></script>
+  </body>
+</html>
