@@ -109,6 +109,12 @@
   let activeState = "";
   let timeline = null;
 
+  function fitScale(desiredScale) {
+    const availableHeight = Math.max(420, window.innerHeight - 48);
+    const ticketHeight = ticket.offsetHeight || 1;
+    return Math.max(0.82, Math.min(desiredScale, availableHeight / ticketHeight));
+  }
+
   function showChapter(name) {
     Object.entries(chapters).forEach(([chapterName, el]) => {
       el?.classList.toggle("is-active", chapterName === name);
@@ -188,7 +194,7 @@
 
   gsap.set(Object.values(chapters), { autoAlpha: 0, y: 28 });
   gsap.set(chapters.intake, { autoAlpha: 1, y: 0 });
-  gsap.set(ticket, { xPercent: -50, yPercent: -50, x: 240, y: 0, scale: 1, opacity: 1 });
+  gsap.set(ticket, { xPercent: -50, yPercent: -50, x: 220, y: 0, scale: fitScale(0.96), opacity: 1 });
   setTicketState("intake");
 
   timeline = gsap.timeline({
@@ -207,16 +213,16 @@
   });
 
   timeline
-    .to(ticket, { x: -250, y: -70, scale: 0.92, opacity: 1, duration: 1 })
+    .to(ticket, { x: -230, y: -52, scale: () => fitScale(0.9), opacity: 1, duration: 1 })
     .to(chapters.intake, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.dispatch, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
-    .to(ticket, { x: 260, y: 76, scale: 1.04, opacity: 1, duration: 1 })
+    .to(ticket, { x: 225, y: 12, scale: () => fitScale(0.88), opacity: 1, duration: 1 })
     .to(chapters.dispatch, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.field, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
-    .to(ticket, { x: -210, y: 92, scale: 0.96, opacity: 1, duration: 1 })
+    .to(ticket, { x: -205, y: 32, scale: () => fitScale(0.9), opacity: 1, duration: 1 })
     .to(chapters.field, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.completion, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
-    .to(ticket, { x: 170, y: -42, scale: 1, opacity: 1, duration: 1 });
+    .to(ticket, { x: 160, y: -36, scale: () => fitScale(0.94), opacity: 1, duration: 1 });
 
   window.addEventListener("load", () => ScrollTrigger.refresh());
 })();
