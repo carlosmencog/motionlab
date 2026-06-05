@@ -40,7 +40,7 @@
   const states = {
     intake: {
       status: "New",
-      detail: "Kitchen leak captured with service, customer, and priority.",
+      detail: "Kitchen leak captured at 1187 Oakview with service and priority.",
       tech: "Unassigned",
       eta: "Pending",
       route: "Pending",
@@ -48,7 +48,7 @@
       completeSteps: [],
       activeStep: "",
       phase: "intake",
-      note: "No field note yet.",
+      note: "Customer reports water under the sink and cabinet swelling.",
       rating: "Rating pending",
       invoice: "Invoice pending",
       proof: "Proof pending",
@@ -57,7 +57,7 @@
     },
     dispatch: {
       status: "Assigned",
-      detail: "Dispatch confirmed Mike as the owner for WO-2048.",
+      detail: "Dispatch confirmed Mike, route, and 45 minute ETA.",
       tech: "Mike",
       eta: "45 min",
       route: "North Loop",
@@ -65,7 +65,7 @@
       completeSteps: [],
       activeStep: "",
       phase: "dispatch",
-      note: "Mike accepted the job and is en route.",
+      note: "Mike accepted WO-2048 from the FIELDOS technician app.",
       rating: "Rating pending",
       invoice: "Invoice pending",
       proof: "Proof pending",
@@ -82,7 +82,7 @@
       completeSteps: ["diagnose", "parts"],
       activeStep: "repair",
       phase: "repair",
-      note: "Replaced supply valve. Drying cabinet base before verification.",
+      note: "Replaced supply valve. Before photo attached; after photo pending.",
       rating: "Rating pending",
       invoice: "Invoice pending",
       proof: "Proof pending",
@@ -91,7 +91,7 @@
     },
     completion: {
       status: "Completed",
-      detail: "The leak is repaired and proof is attached.",
+      detail: "Leak repaired, proof attached, and invoice sent.",
       tech: "Mike",
       eta: "Closed",
       route: "Complete",
@@ -99,10 +99,10 @@
       completeSteps: ["diagnose", "parts", "repair", "verification"],
       activeStep: "",
       phase: "complete",
-      note: "Customer confirmed the repair and signed off on site.",
+      note: "Customer approved the repair and signed off on site.",
       rating: "5 star rating",
       invoice: "Invoice sent",
-      proof: "Before/after attached",
+      proof: "Before/after proof",
       time: "Completed in 2h 10m",
       emphasis: ".ticket__completion",
     },
@@ -159,8 +159,8 @@
 
       if (window.gsap && !reduceMotion && !isMobile) {
         window.gsap.to(node, {
-          autoAlpha: isActive ? 0.92 : isComplete ? 0.5 : 0.28,
-          scale: isActive ? 1 : 0.92,
+          autoAlpha: isActive ? 0.96 : isComplete ? 0.36 : 0.16,
+          scale: isActive ? 1.03 : 0.9,
           duration: 0.18,
           ease: "power2.out",
           overwrite: "auto",
@@ -272,19 +272,19 @@
 
   timeline
     .to(operationLines[0], { strokeDashoffset: 0, duration: 0.7 }, 0.05)
-    .to(ticket, { x: -230, y: -52, scale: () => fitScale(0.9), opacity: 1, duration: 1 })
+    .to(ticket, { x: -230, y: -42, scale: () => fitScale(0.9), opacity: 1, ease: "power1.inOut", duration: 1 })
     .to(chapters.intake, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.dispatch, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
     .to(operationLines[1], { strokeDashoffset: 0, duration: 0.65 }, "<0.05")
-    .to(ticket, { x: 225, y: 12, scale: () => fitScale(0.88), opacity: 1, duration: 1 })
+    .to(ticket, { x: 225, y: 12, scale: () => fitScale(0.88), opacity: 1, ease: "power1.inOut", duration: 1 })
     .to(chapters.dispatch, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.field, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
     .to(operationLines[2], { strokeDashoffset: 0, duration: 0.65 }, "<0.05")
-    .to(ticket, { x: -205, y: 32, scale: () => fitScale(0.9), opacity: 1, duration: 1 })
+    .to(ticket, { x: -205, y: 32, scale: () => fitScale(0.9), opacity: 1, ease: "power1.inOut", duration: 1 })
     .to(chapters.field, { autoAlpha: 0, y: -28, duration: 0.25 }, "<")
     .to(chapters.completion, { autoAlpha: 1, y: 0, duration: 0.25 }, "<0.25")
     .to(operationLines[3], { strokeDashoffset: 0, duration: 0.65 }, "<0.05")
-    .to(ticket, { x: 160, y: -36, scale: () => fitScale(0.94), opacity: 1, duration: 1 });
+    .to(ticket, { x: 160, y: -36, scale: () => fitScale(0.94), opacity: 1, ease: "power1.inOut", duration: 1 });
 
   window.addEventListener("load", () => ScrollTrigger.refresh());
 })();
