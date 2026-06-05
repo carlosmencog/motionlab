@@ -187,7 +187,7 @@ body {
   top: 50%;
   left: 50%;
   width: min(100% - 2rem, 27rem);
-  padding: 1rem;
+  padding: 0.85rem;
   color: #f8f4eb;
   background:
     linear-gradient(145deg, rgb(255 255 255 / 0.12), rgb(255 255 255 / 0.035)),
@@ -200,11 +200,13 @@ body {
 }
 
 .ticket__top,
+.ticket__timeline,
 .ticket__assignment,
 .ticket__completion {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 0.75rem;
 }
 
@@ -226,7 +228,7 @@ body {
 
 .ticket__top h2 {
   margin-top: 0.2rem;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
 }
 
 .ticket__priority {
@@ -243,9 +245,10 @@ body {
 
 .ticket__identity {
   display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.65rem;
-  margin-top: 1rem;
-  padding: 1rem;
+  margin-top: 0.65rem;
+  padding: 0.75rem;
   background: rgb(255 255 255 / 0.06);
   border: 1px solid rgb(255 255 255 / 0.08);
   border-radius: 0.75rem;
@@ -254,9 +257,11 @@ body {
 .ticket__identity div,
 .ticket__state,
 .ticket__assignment div,
+.ticket__note,
 .ticket__completion span {
   display: grid;
   gap: 0.25rem;
+  min-width: 0;
 }
 
 .ticket__identity strong,
@@ -266,15 +271,15 @@ body {
 }
 
 .ticket__state {
-  margin-top: 0.85rem;
-  padding: 1rem;
+  margin-top: 0.65rem;
+  padding: 0.75rem;
   background: rgb(31 111 73 / 0.24);
   border: 1px solid rgb(123 225 155 / 0.22);
   border-radius: 0.75rem;
 }
 
 .ticket__state strong {
-  font-size: 1.55rem;
+  font-size: 1.35rem;
 }
 
 .ticket__state p {
@@ -282,10 +287,64 @@ body {
   line-height: 1.45;
 }
 
+.ticket__timeline {
+  position: relative;
+  margin: 0.65rem 0 0;
+  padding: 0.6rem;
+  list-style: none;
+  background: rgb(255 255 255 / 0.045);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.75rem;
+}
+
+.ticket__timeline::before {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.2rem;
+  left: 1.2rem;
+  height: 2px;
+  content: "";
+  background: rgb(248 244 235 / 0.14);
+}
+
+.ticket__timeline li {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  justify-items: center;
+  gap: 0.35rem;
+  width: auto;
+  color: rgb(248 244 235 / 0.45);
+  font-size: 0.68rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.ticket__timeline li span {
+  width: 0.85rem;
+  height: 0.85rem;
+  background: #3b4438;
+  border: 2px solid #172016;
+  border-radius: 50%;
+}
+
+.ticket__timeline li.is-active,
+.ticket__timeline li.is-complete {
+  color: #9fe29e;
+}
+
+.ticket__timeline li.is-active span,
+.ticket__timeline li.is-complete span {
+  background: #9fe29e;
+}
+
 .ticket__assignment,
 .ticket__completion {
-  margin-top: 0.85rem;
-  padding: 0.85rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 0.65rem;
+  padding: 0.65rem;
   background: rgb(255 255 255 / 0.055);
   border: 1px solid rgb(255 255 255 / 0.08);
   border-radius: 0.75rem;
@@ -295,7 +354,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.4rem;
-  margin: 0.85rem 0 0;
+  margin: 0.65rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -317,6 +376,32 @@ body {
 .ticket__steps li.is-complete {
   color: #172016;
   background: #9fe29e;
+}
+
+.ticket__steps li.is-active {
+  color: #172016;
+  background: #ffcc70;
+}
+
+.ticket__note {
+  margin-top: 0.65rem;
+  padding: 0.65rem;
+  background: rgb(255 255 255 / 0.045);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  border-radius: 0.75rem;
+}
+
+.ticket__note span {
+  color: rgb(248 244 235 / 0.58);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ticket__note p {
+  margin: 0;
+  color: rgb(248 244 235 / 0.72);
+  line-height: 1.4;
 }
 
 .ticket__completion span {
@@ -404,6 +489,15 @@ body {
 
   .field-context {
     grid-template-columns: 1fr;
+  }
+
+  .ticket__identity {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket__assignment,
+  .ticket__completion {
+    grid-template-columns: 1fr 1fr;
   }
 
   .ticket__steps {

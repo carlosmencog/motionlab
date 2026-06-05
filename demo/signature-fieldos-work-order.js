@@ -10,16 +10,6 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isMobile = window.matchMedia("(max-width: 720px)").matches;
 
-  if (reduceMotion || isMobile || !window.gsap || !window.ScrollTrigger) {
-    document.documentElement.classList.add("reduced-motion");
-    setTicketState("completion");
-    showChapter("intake");
-    return;
-  }
-
-  const { gsap, ScrollTrigger } = window;
-  gsap.registerPlugin(ScrollTrigger);
-
   const chapters = {
     intake: document.querySelector('[data-chapter="intake"]'),
     dispatch: document.querySelector('[data-chapter="dispatch"]'),
@@ -31,45 +21,70 @@
   const detailEl = document.querySelector("[data-ticket-detail]");
   const techEl = document.querySelector("[data-ticket-tech]");
   const etaEl = document.querySelector("[data-ticket-eta]");
+  const routeEl = document.querySelector("[data-ticket-route]");
+  const dispatchEl = document.querySelector("[data-ticket-dispatch]");
+  const noteTextEl = document.querySelector("[data-ticket-note-text]");
   const ratingEl = document.querySelector("[data-ticket-rating]");
   const invoiceEl = document.querySelector("[data-ticket-invoice]");
   const proofEl = document.querySelector("[data-ticket-proof]");
+  const timeEl = document.querySelector("[data-ticket-time]");
   const assignmentEl = document.querySelector("[data-ticket-assignment]");
   const completionEl = document.querySelector("[data-ticket-completion]");
+  const noteEl = document.querySelector("[data-ticket-note]");
+  const identityEl = document.querySelector(".ticket__identity");
+  const timelineItems = Array.from(document.querySelectorAll("[data-phase]"));
   const steps = Array.from(document.querySelectorAll("[data-step]"));
 
   const states = {
     intake: {
       status: "New",
-      detail: "Intake created from the customer report.",
+      detail: "Kitchen leak captured with service, customer, and priority.",
       tech: "Unassigned",
       eta: "Pending",
+      route: "Pending",
+      dispatch: "Waiting",
       completeSteps: [],
+      activeStep: "",
+      phase: "intake",
+      note: "No field note yet.",
       rating: "Rating pending",
       invoice: "Invoice pending",
       proof: "Proof pending",
-      emphasis: ".ticket__state",
+      time: "Completion time pending",
+      emphasis: ".ticket__identity",
     },
     dispatch: {
       status: "Assigned",
-      detail: "Mike is assigned with a 45 minute ETA.",
+      detail: "Dispatch confirmed Mike as the owner for WO-2048.",
       tech: "Mike",
       eta: "45 min",
+      route: "North Loop",
+      dispatch: "Confirmed",
       completeSteps: [],
+      activeStep: "",
+      phase: "dispatch",
+      note: "Mike accepted the job and is en route.",
       rating: "Rating pending",
       invoice: "Invoice pending",
       proof: "Proof pending",
+      time: "Completion time pending",
       emphasis: ".ticket__assignment",
     },
     field: {
       status: "In progress",
-      detail: "Repair is underway and verification is queued.",
+      detail: "Repair is active after diagnosis and parts confirmation.",
       tech: "Mike",
       eta: "On site",
-      completeSteps: ["diagnose", "parts", "repair"],
+      route: "On site",
+      dispatch: "Arrived",
+      completeSteps: ["diagnose", "parts"],
+      activeStep: "repair",
+      phase: "repair",
+      note: "Replaced supply valve. Drying cabinet base before verification.",
       rating: "Rating pending",
       invoice: "Invoice pending",
       proof: "Proof pending",
+      time: "Completion time pending",
       emphasis: ".ticket__steps",
     },
     completion: {
@@ -77,10 +92,16 @@
       detail: "The leak is repaired and proof is attached.",
       tech: "Mike",
       eta: "Closed",
+      route: "Complete",
+      dispatch: "Closed",
       completeSteps: ["diagnose", "parts", "repair", "verification"],
+      activeStep: "",
+      phase: "complete",
+      note: "Customer confirmed the repair and signed off on site.",
       rating: "5 star rating",
       invoice: "Invoice sent",
       proof: "Before/after attached",
+      time: "Completed in 2h 10m",
       emphasis: ".ticket__completion",
     },
   };
@@ -106,15 +127,32 @@
     detailEl.textContent = state.detail;
     techEl.textContent = state.tech;
     etaEl.textContent = state.eta;
+    routeEl.textContent = state.route;
+    dispatchEl.textContent = state.dispatch;
+    noteTextEl.textContent = state.note;
     ratingEl.textContent = state.rating;
     invoiceEl.textContent = state.invoice;
     proofEl.textContent = state.proof;
+    timeEl.textContent = state.time;
+
+    [ratingEl, invoiceEl, proofEl, timeEl].forEach((el) => {
+      el.classList.toggle("is-done", name === "completion");
+    });
 
     steps.forEach((step) => {
       step.classList.toggle("is-complete", state.completeSteps.includes(step.dataset.step));
+      step.classList.toggle("is-active", step.dataset.step === state.activeStep);
     });
 
-    [assignmentEl, completionEl, document.querySelector(".ticket__state"), document.querySelector(".ticket__steps")]
+    const phaseOrder = ["intake", "dispatch", "repair", "complete"];
+    const currentPhaseIndex = phaseOrder.indexOf(state.phase);
+    timelineItems.forEach((item) => {
+      const itemIndex = phaseOrder.indexOf(item.dataset.phase);
+      item.classList.toggle("is-complete", itemIndex < currentPhaseIndex);
+      item.classList.toggle("is-active", itemIndex === currentPhaseIndex);
+    });
+
+    [identityEl, assignmentEl, completionEl, noteEl, document.querySelector(".ticket__state"), document.querySelector(".ticket__steps")]
       .filter(Boolean)
       .forEach((el) => el.classList.remove("is-emphasized"));
 
@@ -137,6 +175,16 @@
     showChapter(state);
     setTicketState(state);
   }
+
+  if (reduceMotion || isMobile || !window.gsap || !window.ScrollTrigger) {
+    document.documentElement.classList.add("reduced-motion");
+    showChapter("intake");
+    setTicketState("completion");
+    return;
+  }
+
+  const { gsap, ScrollTrigger } = window;
+  gsap.registerPlugin(ScrollTrigger);
 
   gsap.set(Object.values(chapters), { autoAlpha: 0, y: 28 });
   gsap.set(chapters.intake, { autoAlpha: 1, y: 0 });

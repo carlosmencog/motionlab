@@ -114,6 +114,25 @@
               <p data-ticket-detail>Intake created from the customer report.</p>
             </div>
 
+            <ol class="ticket__timeline" aria-label="Work order lifecycle">
+              <li data-phase="intake" class="is-active">
+                <span></span>
+                <strong>Intake</strong>
+              </li>
+              <li data-phase="dispatch">
+                <span></span>
+                <strong>Dispatch</strong>
+              </li>
+              <li data-phase="repair">
+                <span></span>
+                <strong>Repair</strong>
+              </li>
+              <li data-phase="complete">
+                <span></span>
+                <strong>Complete</strong>
+              </li>
+            </ol>
+
             <div class="ticket__assignment" data-ticket-assignment>
               <div>
                 <span>Technician</span>
@@ -122,6 +141,14 @@
               <div>
                 <span>ETA</span>
                 <strong data-ticket-eta>Pending</strong>
+              </div>
+              <div>
+                <span>Route</span>
+                <strong data-ticket-route>Pending</strong>
+              </div>
+              <div>
+                <span>Dispatch</span>
+                <strong data-ticket-dispatch>Waiting</strong>
               </div>
             </div>
 
@@ -132,10 +159,16 @@
               <li data-step="verification">Verification</li>
             </ol>
 
+            <div class="ticket__note" data-ticket-note>
+              <span>Technician note</span>
+              <p data-ticket-note-text>No field note yet.</p>
+            </div>
+
             <div class="ticket__completion" data-ticket-completion>
               <span data-ticket-rating>Rating pending</span>
               <span data-ticket-invoice>Invoice pending</span>
               <span data-ticket-proof>Proof pending</span>
+              <span data-ticket-time>Completion time pending</span>
             </div>
           </article>
         </div>
